@@ -1,0 +1,217 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(110, 205, 235);
+    overflow: auto;
+}
+
+.navul{
+    display: flex;
+    list-style-type: none;
+}
+
+.app-name{
+    margin: 10px;
+    margin-right: 3vw;
+}
+
+.nav-item{
+    margin: 10px;
+}
+.nav-item:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15px;
+    width: 20px;
+}
+
+.bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+body{
+    background-color: rgb(232, 239, 248);
+}
+
+.body{
+    margin: auto;
+    padding: 10px;
+    width: 50vw;
+    text-align: center;
+}
+
+.clockcontainer{
+    position: relative;
+    margin: 10px auto;
+    height: 25vw;
+    width: 25vw;
+    background: url(clock.jpg) no-repeat;
+    border-radius: 300px;
+    background-size: 100%;
+}
+
+#hour, #minute, #second{
+    position: absolute;
+    border-radius: 20px;
+    background:black;
+    transform-origin: bottom;
+}
+
+#hour{
+    width: 2%;
+    height: 21%;
+    top: 29%;
+    left: 49.1%;
+}
+
+#minute{
+    width: 1.1%;
+    height: 27%;
+    top: 23%;
+    left: 49.45%;
+}
+
+#second{
+    width: 0.5%;
+    height: 33%;
+    top: 17%;
+    left: 49.7%;
+}
+
+.timeshow{
+    width: 30vw;
+    margin: 10px auto;
+    padding: 0.5vw;
+    border-radius: 10px;
+    background-color: rgb(186, 179, 247);
+}
+
+#worldclock, #alarm, #stopwatch, #timer, #secondary{
+    display: none;
+}
+
+#mySelect{
+    width: 25vw;
+    margin:10px auto;
+}
+
+#mySelect:hover{
+    cursor: pointer;
+}
+
+.timerinput{
+    width: 5vw;
+    margin: 10px;
+}
+
+.countdownDisplay{
+    font-size: 2vw;
+    text-align: center;
+    width: 15vw;
+    padding: 6vw 3vw;
+    margin: 10px auto;
+    border-style: dotted;
+    border-radius: 100%;
+}
+
+.button{
+    padding: 0.3vw 1vw;
+    background-color: rgb(152, 211, 208);
+    box-shadow: 5px 5px 2px rgba(182, 180, 180, 0.6);
+    border-radius: 5px;
+    border-width: 1px;
+    margin: 10px;
+}
+
+.lap:hover{
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+}
+
+.stop:hover{
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+.tlabels{
+    margin-top: 17px;
+}
+
+.timeleft{
+    font-size: 2.5vw;
+    padding: 1vw;
+}
+
+@media screen and (max-width: 600px) {
+    .body{
+        width: 90vw;
+    }
+    .countdownDisplay{
+        font-size: 4vw;
+        width: 25vw;
+        padding: 9vw 2vw;
+    }
+    .clockcontainer{
+        height: 45vw;
+        width: 45vw;
+    }
+    .timeshow{
+        width: 65vw;
+        padding: 1vw;
+    }
+    #mySelect{
+        width: 60vw;
+    }
+    .timerinput{
+        width: 10vw;
+    }
+    .timeleft{
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .toggle-button{
+        display: flex;
+    }
+    .nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navdiv{
+        display: none;
+        width: 50%;
+        margin: auto;
+    }
+    .navul{
+        flex-direction: column;
+    }
+    .nav-item{
+        text-align: center;
+        margin: 5px auto;
+    }
+    .navdiv.active{
+        display: block;
+    }
+}

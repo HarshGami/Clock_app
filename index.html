@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock App</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+  <script src="worldclock.js"></script>
+  <script src="timer.js"></script>
+  <script src="stopwatch.js"></script>
+  <script src="alarm.js"></script>
+</head>
+
+<body onload="addOption()">
+  <nav class="nav">
+    <div class="app-name"><b>Clock App</b></div>
+    <div class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <div class="navdiv">
+      <ul class="navul">
+        <li class="nav-item" id="h" onclick="Home()">Home</li>
+        <li class="nav-item" id="w" onclick="WorldClock()">World Clock</li>
+        <li class="nav-item" id="a" onclick="Alarm()">Alarm</li>
+        <li class="nav-item" id="s" onclick="StopWatch()">Stopwatch</li>
+        <li class="nav-item" id="t" onclick="Timer()">Timer</li>
+      </ul>
+    </div>
+  </nav>
+  <div class="body">
+
+    <div id="Home">
+      <div class="clockcontainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+      </div>
+      <div id="dtime" class="timeshow"></div>
+    </div>
+    
+    <div id="worldclock">
+      <form name=f1>
+        <select id="mySelect" name=tz onChange="ShowTime()">
+          <option value="none">Select Time Zone</option>
+        </select>
+        <div id='time' class="timeshow"></div>
+      </form>
+    </div>
+    
+    <div id="alarm">
+      <div class="timeleft">
+        <span>Ring in </span>
+        <span id="alarmtimeleft">0 hour 0 minute.</span>
+      </div>
+      <hr>
+      <div class="tlabels">
+        <span class="timerinput">Hour</span> :
+        <span class="timerinput">Minute</span>
+      </div>
+      <div>
+        <input class="timerinput" id="alarmhour" type="number" name="hour" value="0" min="00" max="24"> : 
+        <input class="timerinput" id="alarmminute" type="number" name="minute" value="0" min="00" max="60"> 
+      </div>
+      <div class="sbuttons">
+        <button class="button lap" onclick="alarmSet()">Set</button>
+        <button class="button stop" onclick="alarmClear()">Clear</button>
+      </div>
+    </div>
+    
+    <div id="stopwatch">
+      <div id="stopwatchcountdown" class="countdownDisplay">
+        <span id="stopwatchhour">0</span> :
+        <span id="stopwatchminute">0</span> :
+        <span id="stopwatchsecond">0</span>
+      </div>
+      <div class="sbuttons">
+        <button class="button lap" id="swstart" onclick="stopwatchStart()">Start</button>
+        <button class="button stop" onclick="stopwatchStop()">stop</button>
+        <button class="button stop" onclick="stopwatchReset()">Reset</button>
+      </div>
+    </div>
+    
+    <div id="timer">
+      <div id="timercountdown" class="countdownDisplay">
+        0 : 0 : 0
+      </div>
+      <div class="tlabels">
+        <span class="timerinput">Hour</span> :
+        <span class="timerinput">Minute</span> :
+        <span class="timerinput">Second</span>
+      </div>
+      <div id="main">
+      <input class="timerinput" id="timerhour" type="number" name="hour" value="0" min="00" max="24"> : 
+      <input class="timerinput" id="timerminute" type="number" name="minute" value="0" min="00" max="60"> : 
+      <input class="timerinput" id="timersecond" type="number" name="second" value="0" min="00" max="60">
+      </div>
+      <div id="secondary">
+        <input class="timerinput" id="stimerhour" type="number" name="hour" min="00" max="24"> : 
+        <input class="timerinput" id="stimerminute" type="number" name="minute" min="00" max="60"> : 
+        <input class="timerinput" id="stimersecond" type="number" name="second" min="00" max="60">
+        </div>  
+      <div class="tbuttons">
+        <button class="button lap" onclick="TimerStart()">Start</button>
+        <button class="button stop" onclick="TimerStop()">Cancel</button>
+      </div>
+    </div>
+  
+  </div>
+  
+  <script>
+    let togglebutton = document.getElementsByClassName('toggle-button')[0];
+    let navli = document.getElementsByClassName('navdiv')[0];
+
+    togglebutton.addEventListener('click',()=>{
+      navli.classList.toggle('active');
+    })
+  </script>
+</body>
+</html>
