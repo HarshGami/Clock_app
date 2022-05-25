@@ -2,10 +2,10 @@
 
 ### You can see webapp at [Clock App](https://harshgami.github.io/Clock_webapp/).
 
-In this webapp, I used basics of HTML, CSS and Javacript.
-This webapp is responsive. 
+In this webapp, I used basics of HTML, CSS and JavaScript.
+This webapp is Responsive. 
 
-You can see time by **Analog** as well as by digital clock.
+You can see time by **Analog** as well as by Digital clock.
 
 You can also see time of different **Time Zone**.
 
